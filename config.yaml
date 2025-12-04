@@ -8,39 +8,38 @@
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor training for instance)
 # incubator: The Carpentries Incubator
-# 
-# This option supports custom types so lessons can be branded
-# and themed with your own logo and alt-text (see `carpentry_description`)
-# See https://carpentries.github.io/sandpaper-docs/editing.html#adding-a-custom-logo
+# Note that you can also use a custom carpentry type. For more info,
+# see the documentation: https://carpentries.github.io/sandpaper-docs/editing.html
 carpentry: 'incubator'
 
-# Alt-text description of the lesson.
-carpentry_description: 'Lesson Description'
+# Custom carpentry description
+# This will be used as the alt text for the logo
+# carpentry_description: "Custom Carpentry"
 
 # Overall title for pages.
-title: 'Lesson Title' # FIXME
+title: 'Lesson Title'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 2025-11-14
+created: '2025-11-14'
 
 # Comma-separated list of keywords for the lesson
-keywords: 'HPC, introduction' # FIXME
+keywords: 'HPC, introduction'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'pre-alpha' # FIXME
+life_cycle: 'pre-alpha'
 
-# License of the lesson
+# License of the lesson materials (recommended CC-BY 4.0)
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'hhttps://github.com/eirini-zormpa/hpc-intro' # FIXME
+source: 'hhttps://github.com/eirini-zormpa/hpc-intro'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'e.zormpa@imperial.ac.uk' # FIXME
+contact: 'e.zormpa@imperial.ac.uk'
 
 # Navigation ------------------------------------------------
 #
@@ -65,21 +64,24 @@ contact: 'e.zormpa@imperial.ac.uk' # FIXME
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
-- introduction.Rmd
+episodes:
+- why-hpc.md
+- what-is-hpc.md
+- hpc-workflow.md
+- sharing-resources.md
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
 
-
+carpentry_description: Lesson Description
