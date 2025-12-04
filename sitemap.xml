@@ -13,6 +13,12 @@
     <loc>https://eirini-zormpa.github.io/hpc-intro/aio.html</loc>
   </url>
   <url>
+    <loc>https://eirini-zormpa.github.io/hpc-intro/citation.html</loc>
+  </url>
+  <url>
+    <loc>https://eirini-zormpa.github.io/hpc-intro/hpc-workflow.html</loc>
+  </url>
+  <url>
     <loc>https://eirini-zormpa.github.io/hpc-intro/images.html</loc>
   </url>
   <url>
@@ -29,6 +35,12 @@
   </url>
   <url>
     <loc>https://eirini-zormpa.github.io/hpc-intro/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://eirini-zormpa.github.io/hpc-intro/instructor/citation.html</loc>
+  </url>
+  <url>
+    <loc>https://eirini-zormpa.github.io/hpc-intro/instructor/hpc-workflow.html</loc>
   </url>
   <url>
     <loc>https://eirini-zormpa.github.io/hpc-intro/instructor/images.html</loc>
@@ -52,6 +64,15 @@
     <loc>https://eirini-zormpa.github.io/hpc-intro/instructor/reference.html</loc>
   </url>
   <url>
+    <loc>https://eirini-zormpa.github.io/hpc-intro/instructor/sharing-resources.html</loc>
+  </url>
+  <url>
+    <loc>https://eirini-zormpa.github.io/hpc-intro/instructor/what-is-hpc.html</loc>
+  </url>
+  <url>
+    <loc>https://eirini-zormpa.github.io/hpc-intro/instructor/why-hpc.html</loc>
+  </url>
+  <url>
     <loc>https://eirini-zormpa.github.io/hpc-intro/instructor-notes.html</loc>
   </url>
   <url>
@@ -65,5 +86,14 @@
   </url>
   <url>
     <loc>https://eirini-zormpa.github.io/hpc-intro/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://eirini-zormpa.github.io/hpc-intro/sharing-resources.html</loc>
+  </url>
+  <url>
+    <loc>https://eirini-zormpa.github.io/hpc-intro/what-is-hpc.html</loc>
+  </url>
+  <url>
+    <loc>https://eirini-zormpa.github.io/hpc-intro/why-hpc.html</loc>
   </url>
 </urlset>
