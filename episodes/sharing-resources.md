@@ -28,6 +28,9 @@ How to use HPC resources responsibly (aim: 30 minutes)
     climate-aware scheduling
     sharing is caring
     green computing
+    - https://dl.acm.org/doi/pdf/10.1145/3581784.3607035
+    - https://dl.acm.org/doi/full/10.1145/3706598.3713919
+    
 
 Demo/exercise (aim: 40 minutes)
 
