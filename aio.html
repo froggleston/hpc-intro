@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Lesson Title: All in One View</title>
+<title>Introduction to HPC for Research Facilitators: All in One View</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="assets/themetoggle.js"></script><link rel="stylesheet" type="text/css" href="assets/styles.css">
 <script src="assets/scripts.js" type="text/javascript"></script><!-- mathjax --><script type="text/x-mathjax-config">
@@ -95,7 +95,7 @@
       <img class="small-logo" alt="Lesson Description" src="assets/images/incubator-logo-sm.svg">
 </div>
     <div class="lesson-title-md">
-      Lesson Title
+      Introduction to HPC for Research Facilitators
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -106,7 +106,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Lesson Title
+            Introduction to HPC for Research Facilitators
           </span>
         </li>
         <li class="nav-item">
@@ -142,7 +142,7 @@
   </div>
 <!--/div.container-fluid -->
 </nav><div class="col-md-12 mobile-title">
-  Lesson Title
+  Introduction to HPC for Research Facilitators
 </div>
 
 <aside class="col-md-12 lesson-progress"><div style="width: %" class="percentage">
@@ -256,7 +256,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="what-is-hpc.html">2. What is HPC? (conceptually)</a>
+        <a href="what-is-hpc.html">2. What is HPC?</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -345,7 +345,7 @@
         
 <section id="aio-why-hpc"><p>Content from <a href="why-hpc.html">Why use HPC?</a></p>
 <hr>
-<p>Last updated on 2026-01-15 |
+<p>Last updated on 2026-02-20 |
 
         <a href="hhttps://github.com/eirini-zormpa/hpc-intro/edit/main/episodes/why-hpc.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -407,59 +407,56 @@ your institution?</p>
 </div>
 <p>Scientific research is becoming increasingly computational <a href="https://doi.org/10.7208/9780226038322-002" class="external-link">(Foster, 2011)</a>.
 Think, for example, of huge text datasets that comprise the entirety of
-Wikipedia or Reddit, or of sensor data coming from structures like
-bridges and tunnels and contain information on structural vibrations,
-seismic activity etc. Or, think of the hugely complicated climate models
-that scientists run to predict the impacts of the climate crisis or of
-the training required for Machine Learning models. Processing huge
-datasets or running calculations of this complexity requires a lot of
-computing power, more than an individual laptop or work station can
-provide.</p>
+Wikipedia or Reddit, or of sensor data from structures like bridges and
+tunnels, containing information on vibrations, seismic activity etc. To
+make this more concrete, let’s look at some studies that have tried to
+quantify this change: One study looking at the size of medical image
+datasets used for research found that the median dataset size in 2018
+was up to 10 times larger compared to 2011 (<a href="https://doi.org/10.3390/jimaging7080155" class="external-link">Kiryati &amp; Landau,
+2021</a>). Another study looking at big data in industry and academia,
+reports that the data that CERN records in a year is projected to
+increase from 160 petabytes in 2018 to 800 petabytes in 2026 (<a href="https://doi.org/10.3389/fdata.2023.1271639" class="external-link">Clissa, Lassnig, &amp;
+Rinaldi, 2023</a>). Or, think of the hugely complicated climate models
+that scientists run to predict the impacts of the climate crisis.
+Processing huge datasets or running calculations of this complexity
+requires a lot of computing power, more than an individual laptop or
+work station can provide.</p>
 <p>To get around this problem, researchers may turn to High-Performance
-Computing (HPC) which provides more resources to run the analysis or
-computation of interest. By <em>resources</em> here we mean memory,
-processors, disk space, network bandwidth, or a combination of any of
-them. To give a taste of the difference between HPC and regular
-computers, an HPC cluster can be 1 million times faster than the fastest
-laptop, <a href="https://www.ibm.com/think/topics/supercomputing" class="external-link">according to
-IBM</a>. (note: this is dependent on code efficiency and how
-parallelisable the problem is) Another example, from the EPCC, is the
-cross-validation of a statistics model: if running the model once takes
-one hour, cross-validating it 1,000 times on a laptop would take over a
-month! If all of the model runs happen in parallel on an HPC cluster,
-the crossvalidation would be complete in one hour.</p>
-<blockquote>
-<p>ABM as methodological tool necessitates running the simulation many
-times, and by many, I mean eight hundred thousand times, and that is
-possible with a laptop… if one plans to be doing their Ph.D. for 500
-years. Supercomputing is bigger, faster, better without any qualitative
-change in terms of the research.</p>
-</blockquote>
-<p>Iza Romanowska, Assistant Professor at Aarhus University</p>
-<p><a href="https://interactivehpc.dk/?p=1358" class="external-link">Source</a></p>
+Computing (HPC) which refers to the use of powerful computers and
+programming techniques to solve computationally-intensive tasks. HPC can
+refer to custom-built <em>supercomputers</em> or groups of individual
+computers that are connected together in a network and work as a unified
+system, forming a <em>cluster</em>. We call these indivisual computers
+of a cluster <em>nodes</em>. To give a taste of the benefit of using HPC
+over a regular computer, let’s look at an example: A PhD student wants
+to cross-validate a statistical model 1,000 times. Running the model
+once on a laptop once takes one hour, meaning that cross-validating it
+1,000 times would take over a month! However, if all of the model runs
+happen in parallel on 1,000 nodes of an HPC cluster, the
+cross-validation would be complete in one hour. How much research can be
+sped up is highly dependent on how efficient the code is and how
+parallelisable the problem.</p>
+
 </section><section><h2 class="section-heading" id="case-studies">Case studies<a class="anchor" aria-label="anchor" href="#case-studies"></a>
 </h2>
 <hr class="half-width">
 <p>Let’s now look at some specific cases in which the use of an HPC
 cluster enabled impactful research.</p>
 <div class="section level3">
-<h3 id="case-study-1-astrophysics">Case study 1: Astrophysics<a class="anchor" aria-label="anchor" href="#case-study-1-astrophysics"></a>
+<h3 id="case-study-1-physics">Case study 1: Physics<a class="anchor" aria-label="anchor" href="#case-study-1-physics"></a>
 </h3>
 <!-- to include for each
 1. introduction
 2. how is HPC implicated?
-3. what does this work matter?
+3. why does this work matter?
 4. sources
 -->
 <p>Most of us will remember the first image of a black hole, which was
 captured in 2019. This would not have been possible without HPC!
 Scientists collected data using eight telescopes located around the
 world, which were then transferred to two supercomputers for processing.
-Advances in chip technology made it possible to measure the radiation
-emitted from the black hole at different frequencies, increasing
-sensitivity and quality of the data captured. Then, the superior
-processing power of the two supercomputers made it possible to combine
-the data from all eight telescopes at high speeds.</p>
+The superior processing power of the two supercomputers made it possible
+to combine the data from all eight telescopes at high speeds.</p>
 <ul>
 <li><a href="https://prace-ri.eu/hpc-supports-first-black-hole-image/" class="external-link">Source
 1</a></li>
@@ -504,7 +501,6 @@ cluster to recreate 3D models of degraded sites.</p>
 <h3 class="callout-title">What kind of resources does this researcher
 need?</h3>
 <div class="callout-content">
-<p>What is the output of this command?</p>
 <ul>
 <li>Analyse survey responses from 300 human participants.</li>
 <li>Run a climate model simulation at high spatial resolution.</li>
@@ -519,7 +515,7 @@ need?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>Analyse survey responses from 300 human participants.
@@ -579,9 +575,9 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-</section></section><section id="aio-what-is-hpc"><p>Content from <a href="what-is-hpc.html">What is HPC? (conceptually)</a></p>
+</section></section><section id="aio-what-is-hpc"><p>Content from <a href="what-is-hpc.html">What is HPC?</a></p>
 <hr>
-<p>Last updated on 2026-01-15 |
+<p>Last updated on 2026-02-20 |
 
         <a href="hhttps://github.com/eirini-zormpa/hpc-intro/edit/main/episodes/what-is-hpc.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -595,8 +591,8 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do you write a lesson using R Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+<li>How does a basic HPC cluster work?</li>
+<li>What does an HPC cluster look like?</li>
 </ul>
 </div>
 </div>
@@ -606,41 +602,85 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain how to use markdown with the new lesson template</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
+<li>List the components of a basic HPC system.</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<section><h2 class="section-heading" id="hpc-clusters-101">HPC clusters 101<a class="anchor" aria-label="anchor" href="#hpc-clusters-101"></a>
+</h2>
+<hr class="half-width">
+<p>The previous episode already established that HPC clusters are made
+up of computers, which we call nodes, which are connected through a,
+typically high-speed, network. Let’s now dig into the different
+components of an HPC cluster and see how they work together. HPC
+clusters will generally require the following basic components:</p>
+<ul>
+<li>nodes. There are different types of with specialised uses:
+<ul>
+<li>a login node is what the user uses to access the cluster</li>
+<li>a compute node is what the user uses to run jobs. There are numerous
+compute nodes in a cluster.</li>
+<li>storage, where files are stored. The nodes used for storage
+typically have more RAM than the compute nodes.</li>
+</ul>
+</li>
+<li>a switch, which connects the login, compute, and storage nodes to
+allow them to act as a seamless unit. These are usually InfiniBand or
+other high-speed Ethernet to meet the low-latency, high-bandwidth
+requirements of HPC clusters.</li>
+</ul>
+<!-- is this stupid xD --><ul>
+<li>cables connecting the different nodes</li>
+</ul>
+<figure><img src="files/clusters.png" alt="Schematic of an HPC cluster, from the Yale Center for Research Computing." class="figure mx-auto d-block"><div class="figcaption">Schematic of an HPC cluster, from the <a href="https://docs.ycrc.yale.edu/clusters-at-yale/" class="external-link">Yale Center for
+Research Computing.</a>
+</div>
+</figure><p>The components listed until now are all hardware. A very important
+piece of software when working on an HPC cluster is the <em>job
+scheduler</em>. A job scheduler is essential because the resources of an
+HPC cluster are finite and the demand on those resources is usually very
+high. When submitting a job, users have to specify how many resources
+(RAM and GPUs) they require and how long they expect their job to take.
+The scheduler uses this information to prioritise jobs and make as
+efficient use of the resources as possible. One of the most commonly
+used job schedulers is SLURM. There will be more information on SLURM in
+the following episode.</p>
+</section><section><h2 class="section-heading" id="different-types-of-hpc">Different types of HPC<a class="anchor" aria-label="anchor" href="#different-types-of-hpc"></a>
+</h2>
+<hr class="half-width">
+<!--
+    constraints: memory, processors, discs. how do platforms differ? different kinds of HPC task require different resources (e.g. a lot of memory but little CPU vs lots of bandwidth)
+    lots of computers that are similar to what your laptop but specialised
+--></section><section><h2 class="section-heading" id="visible-hpc">Visible HPC<a class="anchor" aria-label="anchor" href="#visible-hpc"></a>
 </h2>
 <hr class="half-width">
 <!--
 
-What is HPC (conceptual and hardware)? (aim: 40 minutes)
+Importance of visible HPC - the importance of the thing being there
+this is representative of the real world
 
-    what is an HPC resource?
-    constraints: memory, processors, discs. how do platforms differ? different kinds of HPC task require different resources (e.g. a lot of memory but little CPU vs lots of bandwidth)
-    how are resources shared
-    lots of computers that are similar to what your laptop but specialised
     pictures of big computers 😄
     point to small big computer in the room
     point to the different computers that are networked to each other (point to the cables)
     a core difference of HPC is that the nodes are connected with specialist hardware sometimes. this matters because there are different types of computation which can rely heavily on the connection between the nodes. this gets us to high throughput vs high performance. embarassingly parallel?
     exercise: example problems and ask if it's embarassingly parallel. are we able to give people enough information? could also be a discussion in a small group. props? knitting metaphor or addition
 
---><p>HPC stands for High-Performance Computing and refers to the use of
-powerful computers and programming techniques to solve
-computationally-intensive tasks. Very often, several of these
-high-performance computers are connected together in a network and work
-as a unified system, forming a HPC cluster. HPC clusters typically
-consist of numerous nodes (computers) connected through a high-speed
-network, and they are used to distribute and parallelise tasks.</p>
+difference to a real HPC cluster
+19 inch format in use for our cluster, which is standard. 12u (12 units in size) one server is one U etc.
+a standard rack is 48u. if you put four of ours you get a dataserver
 
-<div id="challenge-1-can-you-do-it" class="callout challenge">
+4 pis - 1U. Ours is a lot shallower than the real thing.
+
+we can't have some of the real stuff - like hyperconnective cable because expensive and don't work with Pis
+
+big switch is what you'd get in a datacenter rack! the switch is underperforming in our setup
+
+the design is realistic - visual connection
+
+--><div id="challenge-1-can-you-do-it" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -1008,7 +1048,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1037,7 +1077,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -1136,8 +1176,8 @@ any links that you are not going to use.
   "url": "https://eirini-zormpa.github.io/hpc-intro/aio.html",
   "identifier": "https://eirini-zormpa.github.io/hpc-intro/aio.html",
   "dateCreated": "2025-11-14",
-  "dateModified": "2026-02-17",
-  "datePublished": "2026-02-17"
+  "dateModified": "2026-02-20",
+  "datePublished": "2026-02-20"
 }
 
   </script><script>
