@@ -1,6 +1,6 @@
 ---
 title: "Why use HPC?"
-teaching: 20
+teaching: 30
 exercises: 10
 ---
 
@@ -41,42 +41,48 @@ What Digital Research Infrastructure facilities are you aware of in your institu
 :::::::::::::::::::::::::::::::::
 
 Scientific research is becoming increasingly computational [(Foster, 2011)](https://doi.org/10.7208/9780226038322-002).
-Think, for example, of huge text datasets that comprise the entirety of Wikipedia or Reddit, or of sensor data coming from structures like bridges and tunnels and contain information on structural vibrations, seismic activity etc.
-Or, think of the hugely complicated climate models that scientists run to predict the impacts of the climate crisis or of the training required for Machine Learning models.
+Think, for example, of huge text datasets that comprise the entirety of Wikipedia or Reddit, or of sensor data from structures like bridges and tunnels, containing information on vibrations, seismic activity etc.
+To make this more concrete, let's look at some studies that have tried to quantify this change:
+One study looking at the size of medical image datasets used for research found that the median dataset size in 2018 was up to 10 times larger compared to 2011 ([Kiryati & Landau, 2021](https://doi.org/10.3390/jimaging7080155)).
+Another study looking at big data in industry and academia, reports that the data that CERN records in a year is projected to increase from 160 petabytes in 2018 to 800 petabytes in 2026 ([Clissa, Lassnig, & Rinaldi, 2023](https://doi.org/10.3389/fdata.2023.1271639)).
+Or, think of the hugely complicated climate models that scientists run to predict the impacts of the climate crisis.
 Processing huge datasets or running calculations of this complexity requires a lot of computing power, more than an individual laptop or work station can provide.
 
-To get around this problem, researchers may turn to High-Performance Computing (HPC) which provides more resources to run the analysis or computation of interest.
-By _resources_ here we mean memory, processors, disk space, network bandwidth, or a combination of any of them.
-To give a taste of the difference between HPC and regular computers, an HPC cluster can be 1 million times faster than the fastest laptop, [according to IBM](https://www.ibm.com/think/topics/supercomputing). (note: this is dependent on code efficiency and how parallelisable the problem is)
-Another example, from the EPCC, is the cross-validation of a statistics model:
-if running the model once takes one hour, cross-validating it 1,000 times on a laptop would take over a month!
-If all of the model runs happen in parallel on an HPC cluster, the crossvalidation would be complete in one hour.
+To get around this problem, researchers may turn to High-Performance Computing (HPC) which refers to the use of powerful computers and programming techniques to solve computationally-intensive tasks.
+HPC can refer to custom-built *supercomputers* or groups of individual computers that are connected together in a network and work as a unified system, forming a *cluster*.
+We call these indivisual computers of a cluster *nodes*.
+To give a taste of the benefit of using HPC over a regular computer, let's look at an example:
+A PhD student wants to cross-validate a statistical model 1,000 times.
+Running the model once on a laptop once takes one hour, meaning that cross-validating it 1,000 times would take over a month!
+However, if all of the model runs happen in parallel on 1,000 nodes of an HPC cluster, the cross-validation would be complete in one hour.
+How much research can be sped up is highly dependent on how efficient the code is and how parallelisable the problem.
 
-> ABM as methodological tool necessitates running the simulation many times, and by many, I mean eight hundred thousand times, and that is possible with a laptop… if one plans to be doing their Ph.D. for 500 years.
-> Supercomputing is bigger, faster, better without any qualitative change in terms of the research.
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-Iza Romanowska, Assistant Professor at Aarhus University
+The information presented here has been copied and lightly adapted from:
 
-[Source](https://interactivehpc.dk/?p=1358)
+- **[Working on HPC clusters using SLURM](https://cambiotraining.github.io/hpc-intro/materials/01-intro.html)**
+- **[Introduction to High Performance Computing with Raspberry Pi](https://scw-aberystwyth.github.io/Introduction-to-HPC-with-RaspberryPi/01-HPC-intro/)**
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Case studies
 
 Let's now look at some specific cases in which the use of an HPC cluster enabled impactful research.
 
-### Case study 1: Astrophysics
+### Case study 1: Physics
 
 <!-- to include for each
 1. introduction
 2. how is HPC implicated?
-3. what does this work matter?
+3. why does this work matter?
 4. sources
 -->
 
 Most of us will remember the first image of a black hole, which was captured in 2019.
 This would not have been possible without HPC!
 Scientists collected data using eight telescopes located around the world, which were then transferred to two supercomputers for processing.
-Advances in chip technology made it possible to measure the radiation emitted from the black hole at different frequencies, increasing sensitivity and quality of the data captured.
-Then, the superior processing power of the two supercomputers made it possible to combine the data from all eight telescopes at high speeds.
+The superior processing power of the two supercomputers made it possible to combine the data from all eight telescopes at high speeds.
 
 - [Source 1](https://prace-ri.eu/hpc-supports-first-black-hole-image/)
 - [Source 2](https://eventhorizontelescope.org/technology)
@@ -103,8 +109,6 @@ Researchers at the University of Bradford used their local HPC cluster to recrea
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 ## What kind of resources does this researcher need?
-
-What is the output of this command?
 
 - Analyse survey responses from 300 human participants.
 - Run a climate model simulation at high spatial resolution.
