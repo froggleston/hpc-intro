@@ -515,7 +515,7 @@ need?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>Analyse survey responses from 300 human participants.
@@ -577,7 +577,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-what-is-hpc"><p>Content from <a href="what-is-hpc.html">What is HPC?</a></p>
 <hr>
-<p>Last updated on 2026-02-20 |
+<p>Last updated on 2026-03-13 |
 
         <a href="hhttps://github.com/eirini-zormpa/hpc-intro/edit/main/episodes/what-is-hpc.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -620,11 +620,11 @@ clusters will generally require the following basic components:</p>
 <ul>
 <li>nodes. There are different types of with specialised uses:
 <ul>
-<li>a login node is what the user uses to access the cluster</li>
-<li>a compute node is what the user uses to run jobs. There are numerous
-compute nodes in a cluster.</li>
-<li>storage, where files are stored. The nodes used for storage
-typically have more RAM than the compute nodes.</li>
+<li>interactive (or login) nodes are used to access the cluster</li>
+<li>compute node are used to run jobs. There are numerous compute nodes
+in a cluster.</li>
+<li>storage, where files are stored. The nodes used for storage may have
+more RAM than the compute nodes.</li>
 </ul>
 </li>
 <li>a switch, which connects the login, compute, and storage nodes to
@@ -646,47 +646,63 @@ high. When submitting a job, users have to specify how many resources
 (RAM and GPUs) they require and how long they expect their job to take.
 The scheduler uses this information to prioritise jobs and make as
 efficient use of the resources as possible. One of the most commonly
-used job schedulers is SLURM. There will be more information on SLURM in
+used job schedulers is Slurm. There will be more information on Slurm in
 the following episode.</p>
 </section><section><h2 class="section-heading" id="different-types-of-hpc">Different types of HPC<a class="anchor" aria-label="anchor" href="#different-types-of-hpc"></a>
 </h2>
 <hr class="half-width">
+<!-- if only embarassingly parallel, rethink how sections work --><p>We’ve talked about the different hardware components of an HPC
+cluster that determine the system’s computing power, bandwidth and
+memory storage. These can be configured in bespoke ways to suit the type
+of problem at hand. For example, some problems require a lot of storage
+space but little CPU, while others may require the opposite.</p>
+<div class="section level3">
+<h3 id="embarassingly-parallel">Embarassingly parallel<a class="anchor" aria-label="anchor" href="#embarassingly-parallel"></a>
+</h3>
+<p>Some scientific problems require running the same programme multiple
+times, but with different parameters. Each run of the programme is
+completely independent from the rest, i.e. its run does not rely on the
+outcome of any other run. In this case, all runs can happen in parallel
+on separate CPUs and everything is combined at the very end. This would
+be an example of an “embarassingly parallel” task.</p>
+<p>This relates to the concept of <em>high-throughput computing</em>,
+which not only runs multiple jobs in parallel and independently, but
+does so on <em>ordinary computers</em>. This means that the nodes used
+in these systems are not specialised, but very similar to what you would
+use in your own laptop.</p>
+<p>For embarassingly parallel tasks, priority is on a large number of
+CPUs, with a high-speed low-latency interconnect being less
+important.</p>
+<!--
+### Shared memory parallelism
+
+A different kind of scientific question might rely on the analysis of very large datasets.
+Here, CPUs are able to work on tasks independently, but they all need access to the same dataset.
+
+For this kind of tasks, all CPUs need to be part of the same node and have access to the same RAM.
+-->
+</div>
+<div class="section level3">
+<h3 id="message-parsing-interface-mpi-parallelism">Message Parsing Interface (MPI) parallelism<a class="anchor" aria-label="anchor" href="#message-parsing-interface-mpi-parallelism"></a>
+</h3>
+<p>Sometimes, jobs can be parallelised to an extent but cannot be run
+completely independently of each other, but need to exchange
+information. Generally this is the case because the different chunks of
+the task that needs to be completed can only be in a certain order.</p>
+<p>In those cases, a high-speed low-latency interconnect is much more
+important compared to an embarassingly parallel task.</p>
 <!--
     constraints: memory, processors, discs. how do platforms differ? different kinds of HPC task require different resources (e.g. a lot of memory but little CPU vs lots of bandwidth)
     lots of computers that are similar to what your laptop but specialised
---></section><section><h2 class="section-heading" id="visible-hpc">Visible HPC<a class="anchor" aria-label="anchor" href="#visible-hpc"></a>
-</h2>
-<hr class="half-width">
-<!--
-
-Importance of visible HPC - the importance of the thing being there
-this is representative of the real world
-
-    pictures of big computers 😄
-    point to small big computer in the room
-    point to the different computers that are networked to each other (point to the cables)
-    a core difference of HPC is that the nodes are connected with specialist hardware sometimes. this matters because there are different types of computation which can rely heavily on the connection between the nodes. this gets us to high throughput vs high performance. embarassingly parallel?
-    exercise: example problems and ask if it's embarassingly parallel. are we able to give people enough information? could also be a discussion in a small group. props? knitting metaphor or addition
-
-difference to a real HPC cluster
-19 inch format in use for our cluster, which is standard. 12u (12 units in size) one server is one U etc.
-a standard rack is 48u. if you put four of ours you get a dataserver
-
-4 pis - 1U. Ours is a lot shallower than the real thing.
-
-we can't have some of the real stuff - like hyperconnective cable because expensive and don't work with Pis
-
-big switch is what you'd get in a datacenter rack! the switch is underperforming in our setup
-
-the design is realistic - visual connection
-
---><div id="challenge-1-can-you-do-it" class="callout challenge">
+    specialist hardware matters because there are different types of computation which can rely heavily on the connection between the nodes. this gets us to high throughput vs high performance.
+-->
+<div id="will-it-embarassingly-parallel" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?</h3>
+<div id="will-it-embarassingly-parallel" class="callout-inner">
+<h3 class="callout-title">Will it embarassingly parallel</h3>
 <div class="callout-content">
 <p>What is the output of this command?</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -701,9 +717,9 @@ the design is realistic - visual connection
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -714,7 +730,34 @@ the design is realistic - visual connection
 </div>
 </div>
 </div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
+</div>
+</section><section><h2 class="section-heading" id="visible-hpc">Visible HPC<a class="anchor" aria-label="anchor" href="#visible-hpc"></a>
+</h2>
+<hr class="half-width">
+<!--
+
+Importance of visible HPC - the importance of the thing being there
+this is representative of the real world
+
+    pictures of big computers 😄
+    point to small big computer in the room
+    point to the different computers that are networked to each other (point to the cables)
+    a core difference of HPC is that the nodes are connected with specialist hardware sometimes
+    exercise: example problems and ask if it's embarassingly parallel. are we able to give people enough information? could also be a discussion in a small group. props? knitting metaphor or addition
+
+difference to a real HPC cluster
+19 inch format in use for our cluster, which is standard. 12u (12 units in size) one server is one U etc.
+a standard rack is 48u. if you put four of ours you get a dataserver
+
+4 pis - 1U. Ours is a lot shallower than the real thing.
+
+we can't have some of the real stuff - like hyperconnective cable because expensive and don't work with Pis
+
+big switch is what you'd get in a datacenter rack! the switch is underperforming in our setup
+
+the design is realistic - visual connection
+
+--><div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -732,7 +775,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -740,23 +783,6 @@ challenge blocks?</h3>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="figures">Figures<a class="anchor" aria-label="anchor" href="#figures"></a>
-</h2>
-<hr class="half-width">
-<p>You can include figures generated from R Markdown:</p>
-<p><code>{r pyramid, fig.alt = "pie chart illusion of a pyramid", fig.cap = "Sun arise each and every morning"} pie(   c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5),    init.angle = 315,    col = c("deepskyblue", "yellow", "yellow3"),    border = FALSE )</code>
-Or you can use pandoc markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure></section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a>
-</h2>
-<hr class="half-width">
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -764,16 +790,7 @@ this:</p>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
-</ul>
+
 </div>
 </div>
 </div>
@@ -1176,8 +1193,8 @@ any links that you are not going to use.
   "url": "https://eirini-zormpa.github.io/hpc-intro/aio.html",
   "identifier": "https://eirini-zormpa.github.io/hpc-intro/aio.html",
   "dateCreated": "2025-11-14",
-  "dateModified": "2026-03-10",
-  "datePublished": "2026-03-10"
+  "dateModified": "2026-03-13",
+  "datePublished": "2026-03-13"
 }
 
   </script><script>
