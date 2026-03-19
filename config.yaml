@@ -67,8 +67,6 @@ contact: 'e.zormpa@imperial.ac.uk'
 episodes:
 - why-hpc.md
 - what-is-hpc.md
-- hpc-workflow.md
-- sharing-resources.md
 
 # Information for Learners
 learners:
