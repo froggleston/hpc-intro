@@ -323,7 +323,7 @@
         
 <section id="aio-why-hpc"><p>Content from <a href="why-hpc.html">Why use HPC?</a></p>
 <hr>
-<p>Last updated on 2026-02-20 |
+<p>Last updated on 2026-03-19 |
 
         <a href="hhttps://github.com/eirini-zormpa/hpc-intro/edit/main/episodes/why-hpc.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
@@ -359,19 +359,7 @@ cluster?</li>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
-<!--
-
-Why HPC? (aim: 30 minutes)
-  icebreaker questions: what % of research uses programming/what DRI or HPC facilities are you aware of in your institution? -
-  Research is increasingly computational
-  Side effect of this is that researchers need to process more and more complex data and access more computing resources to do so
-  undertake more advanced computations
-  specialised computing power is needed
-  why is a laptop not enough (give examples). comparing computational power of a laptop (e.g. this many calculations per second on a computer versus on HPC)
-  case studies (pick and choose depending on audience)
-  relationship between HPC and AI
-  exercise ideas: researcher personas with research projects - do they need HPC?
---><div id="icebreaker-questions" class="callout discussion">
+<div id="icebreaker-questions" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -420,7 +408,7 @@ parallelisable the problem.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>The information presented here has been copied and lightly adapted
 from:</p>
@@ -512,7 +500,7 @@ need?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>Analyse survey responses from 300 human participants.
@@ -729,7 +717,7 @@ important compared to an embarassingly parallel task.</p>
 <p>A lot of the things we have been discussing can feel a bit abstract.
 What does a node look like? Where is a process happening? How do these
 computers communicate to each other?</p>
-<p>Below you can see some pictures from the Slough Data Centre hosting
+<p>Below you can see a picture from the Slough Data Centre hosting
 Imperial’s High Performance Computing facilities.</p>
 <!--
 
@@ -737,13 +725,12 @@ Photographer
 Dave Guttridge
 
 -->
-<p><img src="../files/230620_DG_ICL_Slough_Data-057.jpg" alt="Image of two people standing next to large servers." class="figure"><img src="../files/230620_DG_ICL_Slough_Data-211.jpg" alt="Image of a close up of the cluster nodes." class="figure"></p>
-<!--
+<figure><img src="../files/230620_DG_ICL_Slough_Data-057.jpg" alt="Image of two people standing next to large servers." class="figure mx-auto d-block"><div class="figcaption">Imperial’s HPC facilities.</div>
+</figure><!--
 
 Importance of visible HPC - the importance of the thing being there
 this is representative of the real world
--->
-<p>For better or worse, it is quite rare for researchers and research
+--><p>For better or worse, it is quite rare for researchers and research
 supporters to visit these facilities and get first-hand experience of
 what this equipment looks like.</p>
 <p>That’s where mini HPC clusters like ours come in! They provide an
@@ -760,7 +747,10 @@ Let’s look at how:</p>
 <li>at only 12U, our cluster is rather short but stack four of them and
 you get a typical full size rack (48U)!</li>
 </ul>
-<p>This is all about how our cluster <em>looks</em>, but let’s not talk
+<p>If we take a closer look at Imperial’s HPC facilities, we again see
+nodes connected by cables!</p>
+<figure><img src="../files/230620_DG_ICL_Slough_Data-211.jpg" alt="Image of a close up of the cluster nodes." class="figure mx-auto d-block"><div class="figcaption">Detail of Imperial’s HPC facilities.</div>
+</figure><p>This is all about how our cluster <em>looks</em>, but let’s now talk
 about what is inside it. The workhorse of our cluster are 36 Raspberry
 Pi 5 computers. Thirty-two of them are used as compute nodes, one as the
 interactive login node and three as a distributed memory system.
@@ -775,32 +765,6 @@ high-throughput computing type of HPC, not using any specialised
 equipment.</p>
 <p>This is not true of our network switch which is enterprise-level and
 very similar to what you would see in a real data centre.</p>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within
-challenge blocks?</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
-</div>
-</div>
-</div>
-</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -808,7 +772,13 @@ challenge blocks?</h3>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-
+<ul>
+<li>HPC clusters typically consist of nodes, used for user login,
+computation and storage, and interconnects.</li>
+<li>Different types of research questions may be best tackled by
+different types of HPC, e.g. depending on how interdependent the
+calculations are and how much data there is.</li>
+</ul>
 </div>
 </div>
 </div>
