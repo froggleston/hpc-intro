@@ -87,11 +87,7 @@ In those cases, a high-speed low-latency interconnect is much more important com
 
 ## Will it embarassingly parallel
 
-What is the output of this command?
-
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
+<!--     exercise: example problems and ask if it's embarassingly parallel. are we able to give people enough information? could also be a discussion in a small group. props? knitting metaphor or addition -->
 
 :::::::::::::::::::::::: solution 
 
@@ -107,30 +103,57 @@ paste("This", "new", "lesson", "looks", "good")
 
 ## Visible HPC
 
+A lot of the things we have been discussing can feel a bit abstract.
+What does a node look like?
+Where is a process happening?
+How do these computers communicate to each other?
+
+
+Below you can see some pictures from the Slough Data Centre hosting Imperial's High Performance Computing facilities.
+
+<!--
+
+Photographer
+Dave Guttridge
+
+-->
+
+![Imperial's HPC facilities.](files/230620_DG_ICL_Slough_Data-057.jpg){alt='Image of two people standing next to large servers.'}
+![Detail of Imperial's HPC facilities.](files/230620_DG_ICL_Slough_Data-211.jpg){alt='Image of a close up of the cluster nodes.'}
+
 <!--
 
 Importance of visible HPC - the importance of the thing being there
 this is representative of the real world
-
-    pictures of big computers 😄
-    point to small big computer in the room
-    point to the different computers that are networked to each other (point to the cables)
-    a core difference of HPC is that the nodes are connected with specialist hardware sometimes
-    exercise: example problems and ask if it's embarassingly parallel. are we able to give people enough information? could also be a discussion in a small group. props? knitting metaphor or addition
-
-difference to a real HPC cluster
-19 inch format in use for our cluster, which is standard. 12u (12 units in size) one server is one U etc.
-a standard rack is 48u. if you put four of ours you get a dataserver
-
-4 pis - 1U. Ours is a lot shallower than the real thing.
-
-we can't have some of the real stuff - like hyperconnective cable because expensive and don't work with Pis
-
-big switch is what you'd get in a datacenter rack! the switch is underperforming in our setup
-
-the design is realistic - visual connection
-
 -->
+
+For better or worse, it is quite rare for researchers and research supporters to visit these facilities and get first-hand experience of what this equipment looks like.
+
+That's where mini HPC clusters like ours come in!
+They provide an opportunity for a wider audience to interact with this kind of infrastructure.
+
+Here is a picture of our own mini cluster.
+
+![Mini cluster!](files/mini-cluster.jpg){alt='Image of a little cluster.'}
+
+Clearly, these are very different beasts!
+Our cluster is much smaller and, at least somewhat, portable.
+However, the design of our cluster is realistic and can help build a visual connection to the real thing.
+Let's look at how:
+
+- the rack is 19 inches in width, which is the industry standard
+- at only 12U, our cluster is rather short but stack four of them and you get a typical full size rack (48U)!
+
+This is all about how our cluster _looks_, but let's not talk about what is inside it.
+The workhorse of our cluster are 36 Raspberry Pi 5 computers.
+Thirty-two of them are used as compute nodes, one as the interactive login node and three as a distributed memory system.
+Raspberry Pi computers are a convenient choice for this mini cluster because they are easily available, relatively inexpensive and have a suite of compatible hardware and software, due to their popularity.
+The Pis are powered over Ethernet cables, which again are easy to obtain.
+In many HPC systems, the nodes will be more high powered than a Raspberry Pi and the interconnects will be more specialised than an Ethernet cable.
+In that sense, this system is more closely related to the high-throughput computing type of HPC, not using any specialised equipment.
+
+This is not true of our network switch which is enterprise-level and very similar to what you would see in a real data centre.
+
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
