@@ -108,8 +108,7 @@ What does a node look like?
 Where is a process happening?
 How do these computers communicate to each other?
 
-
-Below you can see some pictures from the Slough Data Centre hosting Imperial's High Performance Computing facilities.
+Below you can see a picture from the Slough Data Centre hosting Imperial's High Performance Computing facilities.
 
 <!--
 
@@ -119,7 +118,6 @@ Dave Guttridge
 -->
 
 ![Imperial's HPC facilities.](files/230620_DG_ICL_Slough_Data-057.jpg){alt='Image of two people standing next to large servers.'}
-![Detail of Imperial's HPC facilities.](files/230620_DG_ICL_Slough_Data-211.jpg){alt='Image of a close up of the cluster nodes.'}
 
 <!--
 
@@ -144,7 +142,11 @@ Let's look at how:
 - the rack is 19 inches in width, which is the industry standard
 - at only 12U, our cluster is rather short but stack four of them and you get a typical full size rack (48U)!
 
-This is all about how our cluster _looks_, but let's not talk about what is inside it.
+If we take a closer look at Imperial's HPC facilities, we again see nodes connected by cables!
+
+![Detail of Imperial's HPC facilities.](files/230620_DG_ICL_Slough_Data-211.jpg){alt='Image of a close up of the cluster nodes.'}
+
+This is all about how our cluster _looks_, but let's now talk about what is inside it.
 The workhorse of our cluster are 36 Raspberry Pi 5 computers.
 Thirty-two of them are used as compute nodes, one as the interactive login node and three as a distributed memory system.
 Raspberry Pi computers are a convenient choice for this mini cluster because they are easily available, relatively inexpensive and have a suite of compatible hardware and software, due to their popularity.
@@ -154,22 +156,10 @@ In that sense, this system is more closely related to the high-throughput comput
 
 This is not true of our network switch which is enterprise-level and very similar to what you would see in a real data centre.
 
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 2: how do you nest solutions within challenge blocks?
-
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-
+- HPC clusters typically consist of nodes, used for user login, computation and storage, and interconnects.
+- Different types of research questions may be best tackled by different types of HPC, e.g. depending on how interdependent the calculations are and how much data there is.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

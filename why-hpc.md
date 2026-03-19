@@ -18,20 +18,6 @@ exercises: 10
 
 ## Introduction
 
-<!--
-
-Why HPC? (aim: 30 minutes)
-  icebreaker questions: what % of research uses programming/what DRI or HPC facilities are you aware of in your institution? - 
-  Research is increasingly computational
-  Side effect of this is that researchers need to process more and more complex data and access more computing resources to do so
-  undertake more advanced computations
-  specialised computing power is needed
-  why is a laptop not enough (give examples). comparing computational power of a laptop (e.g. this many calculations per second on a computer versus on HPC)
-  case studies (pick and choose depending on audience)
-  relationship between HPC and AI
-  exercise ideas: researcher personas with research projects - do they need HPC?
--->
-
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 ## Icebreaker questions
