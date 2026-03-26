@@ -82,10 +82,49 @@ Modelling the various factors and their interactions that can affect their stabi
 [Source](https://ni-hpc.ac.uk/CaseStudies/WindTurbineModelling/#d.en.1380908)
 
 ### Case study 3: Biology
-HPC was fundamental in the creation of the neural network AlphaFold, which is highly accurate in predicting the structure of proteins.
-This is incredibly important work that enables the discovery of new drugs.
+Another well-publicised piece of research that made heavy use of HPC is AlphaFold.
+AlphaFold is an AI programme that is highly accurate in predicting the 3D structure of proteins.
 
-[Source](https://www.embl.org/news/science/alphafold-using-open-data-and-ai-to-discover-the-3d-protein-universe/)
+#### Why does it matter?
+Proteins underpin life.
+Although proteins can be represented as a linear sequence of amino acids, their function depends on how they fold, i.e. their precise 3D structure.
+Insights into the structure, and thus the function of a protein is critical for understanding biological processes, from diseases that affect humans to bacteria that are found in our environment.
+Understanding these processes can then be used in a wide range of applications, from drug discovery to fighting environmental pollution.
+
+The first time a protein's structure was determined was back in 1958.
+Since then, scientists have used experimental methods to uncover protein structure.
+Although highly accurate, these methods are slow.
+By 2020, the structure of approximately 200,000 proteins was uncovered using these techniques.
+This may sound like a large number, but it pales in comparison to the number of known proteins - 200 million!
+Naturally, computational prediction of protein structure had also been attempted; an international competition was even set up in 1994 with the goal of advancing the methods of identifying protein structure from sequence.
+At the 14th iteration of the competition, in 2020, there was a breakthrough.
+The AlphaFold 2 system was announced as being equally accurate to experimental methods.
+
+#### How did HPC contribute?
+The use of HPC was fundamental in the development of AlphaFold and remains important for its use.
+In developing AlphaFold, both large amounts of data and complex resource-intensive software was required.
+Starting with data, AlphaFold was trained on very large biological datasets, including experimentally determined structures and extensive protein-sequence databases, such as UniProt.
+An innovation that contributed to the success of AlphaFold was the use of evolutionary covariation data.
+Evolutionary covariation is based on the observation that after one amino acid in a protein becomes mutated over evolutionary time, a compensatory mutation in another amino acid often occurs to maintain the structure or restore the function of the protein.
+This can indicate that these two amino acids are in direct physical contact in the folded protein, giving clues to the protein's overall 3D structure.
+Finding these correlations requires multiple sequence alignments of related proteins, and large-scale comparisons between pairs of amino acids.
+
+The system that this data was used to train is a deep neural network, a type of machine learning model.
+This neural network consists of hundreds of layers arranged as a two-dimensional residual architecture with dilated convolutions, allowing it to capture relationships between amino acids that may be far apart in the sequence but close in three-dimensional space.
+Training such a model requires processing large biological datasets and iteratively updating millions of parameters using stochastic gradient descent.
+In practice, this meant running training jobs across 8 GPUs in parallel over hundreds of thousands of training steps.
+Even with this level of parallelism, a single training run took about 5 days to complete.
+
+In this context, HPC was not simply accelerating an existing workflow; it enabled a fundamentally more powerful modelling approach.
+Without access to parallel GPU computing and large-scale training infrastructure, it would not have been practical to train such deep, data-intensive networks or to iterate on their design.
+This level of computational capability was a key factor in allowing AlphaFold to reach near-experimental accuracy and move protein structure prediction from a long-standing challenge to a routinely solvable problem.
+The scientific breakthroughs that AlphaFold has enabled have contributed to combatting antibiotic resistance, developing malaria treatments, and creating enzymes to fight plastic pollution
+
+#### Sources and further reading
+- Improved protein structure prediction using potentials from deep learning ([link to academic publication on AlphaFold 2](https://doi.org/10.1038/s41586-019-1923-7))
+- AlphaFold uses open data and AI to discover the 3D protein universe ([link to blog post on EMBL.org](https://www.embl.org/news/science/alphafold-using-open-data-and-ai-to-discover-the-3d-protein-universe))
+- Open access to predicted proteins via AlphaFold Protein Structure Database ([link to EMBL-EBI database](https://alphafold.ebi.ac.uk/))
+- Online training on AlphaFold ([link to EMBL-EBI training](https://www.ebi.ac.uk/training/online/courses/alphafold/))
 
 ### Case study 4: Archaelogy
 Researchers at the University of Bradford used their local HPC cluster to recreate 3D models of degraded sites.
