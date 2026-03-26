@@ -292,7 +292,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Why use HPC?</h1>
-        <p>Last updated on 2026-03-19 |
+        <p>Last updated on 2026-03-26 |
 
         <a href="hhttps://github.com/eirini-zormpa/hpc-intro/edit/main/episodes/why-hpc.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -408,11 +408,87 @@ their stability would be impossible without HPC infrastructure.</p>
 </div>
 <div class="section level3">
 <h3 id="case-study-3-biology">Case study 3: Biology<a class="anchor" aria-label="anchor" href="#case-study-3-biology"></a></h3>
-<p>HPC was fundamental in the creation of the neural network AlphaFold,
-which is highly accurate in predicting the structure of proteins. This
-is incredibly important work that enables the discovery of new
-drugs.</p>
-<p><a href="https://www.embl.org/news/science/alphafold-using-open-data-and-ai-to-discover-the-3d-protein-universe/" class="external-link">Source</a></p>
+<p>Another well-publicised piece of research that made heavy use of HPC
+is AlphaFold. AlphaFold is an AI programme that is highly accurate in
+predicting the 3D structure of proteins.</p>
+<div class="section level4">
+<h4 id="why-does-it-matter">Why does it matter?<a class="anchor" aria-label="anchor" href="#why-does-it-matter"></a></h4>
+<p>Proteins underpin life. Although proteins can be represented as a
+linear sequence of amino acids, their function depends on how they fold,
+i.e. their precise 3D structure. Insights into the structure, and thus
+the function of a protein is critical for understanding biological
+processes, from diseases that affect humans to bacteria that are found
+in our environment. Understanding these processes can then be used in a
+wide range of applications, from drug discovery to fighting
+environmental pollution.</p>
+<p>The first time a protein’s structure was determined was back in 1958.
+Since then, scientists have used experimental methods to uncover protein
+structure. Although highly accurate, these methods are slow. By 2020,
+the structure of approximately 200,000 proteins was uncovered using
+these techniques. This may sound like a large number, but it pales in
+comparison to the number of known proteins - 200 million! Naturally,
+computational prediction of protein structure had also been attempted;
+an international competition was even set up in 1994 with the goal of
+advancing the methods of identifying protein structure from sequence. At
+the 14th iteration of the competition, in 2020, there was a
+breakthrough. The AlphaFold 2 system was announced as being equally
+accurate to experimental methods.</p>
+</div>
+<div class="section level4">
+<h4 id="how-did-hpc-contribute">How did HPC contribute?<a class="anchor" aria-label="anchor" href="#how-did-hpc-contribute"></a></h4>
+<p>The use of HPC was fundamental in the development of AlphaFold and
+remains important for its use. In developing AlphaFold, both large
+amounts of data and complex resource-intensive software was required.
+Starting with data, AlphaFold was trained on very large biological
+datasets, including experimentally determined structures and extensive
+protein-sequence databases, such as UniProt. An innovation that
+contributed to the success of AlphaFold was the use of evolutionary
+covariation data. Evolutionary covariation is based on the observation
+that after one amino acid in a protein becomes mutated over evolutionary
+time, a compensatory mutation in another amino acid often occurs to
+maintain the structure or restore the function of the protein. This can
+indicate that these two amino acids are in direct physical contact in
+the folded protein, giving clues to the protein’s overall 3D structure.
+Finding these correlations requires multiple sequence alignments of
+related proteins, and large-scale comparisons between pairs of amino
+acids.</p>
+<p>The system that this data was used to train is a deep neural network,
+a type of machine learning model. This neural network consists of
+hundreds of layers arranged as a two-dimensional residual architecture
+with dilated convolutions, allowing it to capture relationships between
+amino acids that may be far apart in the sequence but close in
+three-dimensional space. Training such a model requires processing large
+biological datasets and iteratively updating millions of parameters
+using stochastic gradient descent. In practice, this meant running
+training jobs across 8 GPUs in parallel over hundreds of thousands of
+training steps. Even with this level of parallelism, a single training
+run took about 5 days to complete.</p>
+<p>In this context, HPC was not simply accelerating an existing
+workflow; it enabled a fundamentally more powerful modelling approach.
+Without access to parallel GPU computing and large-scale training
+infrastructure, it would not have been practical to train such deep,
+data-intensive networks or to iterate on their design. This level of
+computational capability was a key factor in allowing AlphaFold to reach
+near-experimental accuracy and move protein structure prediction from a
+long-standing challenge to a routinely solvable problem. The scientific
+breakthroughs that AlphaFold has enabled have contributed to combatting
+antibiotic resistance, developing malaria treatments, and creating
+enzymes to fight plastic pollution</p>
+</div>
+<div class="section level4">
+<h4 id="sources-and-further-reading">Sources and further reading<a class="anchor" aria-label="anchor" href="#sources-and-further-reading"></a></h4>
+<ul><li>Improved protein structure prediction using potentials from deep
+learning (<a href="https://doi.org/10.1038/s41586-019-1923-7" class="external-link">link to
+academic publication on AlphaFold 2</a>)</li>
+<li>AlphaFold uses open data and AI to discover the 3D protein universe
+(<a href="https://www.embl.org/news/science/alphafold-using-open-data-and-ai-to-discover-the-3d-protein-universe" class="external-link">link
+to blog post on EMBL.org</a>)</li>
+<li>Open access to predicted proteins via AlphaFold Protein Structure
+Database (<a href="https://alphafold.ebi.ac.uk/" class="external-link">link to EMBL-EBI
+database</a>)</li>
+<li>Online training on AlphaFold (<a href="https://www.ebi.ac.uk/training/online/courses/alphafold/" class="external-link">link to
+EMBL-EBI training</a>)</li>
+</ul></div>
 </div>
 <div class="section level3">
 <h3 id="case-study-4-archaelogy">Case study 4: Archaelogy<a class="anchor" aria-label="anchor" href="#case-study-4-archaelogy"></a></h3>
@@ -548,8 +624,8 @@ any links that you are not going to use.
   "url": "https://eirini-zormpa.github.io/hpc-intro/why-hpc.html",
   "identifier": "https://eirini-zormpa.github.io/hpc-intro/why-hpc.html",
   "dateCreated": "2025-11-14",
-  "dateModified": "2026-03-19",
-  "datePublished": "2026-03-24"
+  "dateModified": "2026-03-26",
+  "datePublished": "2026-03-26"
 }
 
   </script><script>
