@@ -87,7 +87,7 @@ jobs:
       - name: Update Workflows
         id: update
         if: ${{ steps.validate-token.outputs.wf == 'true' }}
-        uses: carpentries/actions/update-workflows@frog-wf-unset-1
+        uses: carpentries/actions/update-workflows@main
         with:
           version: ${{ github.event.inputs.version || 'latest' }}
           clean: ${{ github.event.inputs.clean || '.yaml' }}
