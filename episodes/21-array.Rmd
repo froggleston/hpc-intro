@@ -4,10 +4,6 @@ teaching: 15
 exercises: 5
 ---
 
-```{r, echo=FALSE}
-# Source the external configuration script
-source("load_config.R")
-```
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
@@ -43,7 +39,7 @@ For instance,
 you might need to run the same task on several independent input
 files, or you may have multiple serial tasks that take some parameter,
 and you need to explore several values of the parameter.
-Workflows made up of these independent elements are 
+Workflows made up of these independent elements are
 also sometimes called "high-throughput" computing.
 
 Operationally speaking, a Job Array is a collection of related batch
@@ -113,7 +109,7 @@ How would you submit the script to Slurm for execution?
 
 :::::::::::::::  solution
 
-  
+
 ```bash
 sbatch job_single_amdahl.sh
 ```
@@ -195,6 +191,6 @@ snippets('array/job_array_amdahl.Rmd')
 - The queuing system facilitates executing parallel tasks.
 - Parallel computing allows applications to distribute the workload over several CPUs or nodes
 - There are multiple parallelization strategies that are generally supported by resource managers.
-- Array parallel jobs are suitable for independent runs of the same executable with varying inputs or outputs. 
+- Array parallel jobs are suitable for independent runs of the same executable with varying inputs or outputs.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
